@@ -42,11 +42,13 @@ data_for_TF = bag_of_words.toarray()
 Term_Frequency_Matrix = []
 
 for TFdata in data_for_TF :
-    len_of_TFdata = len(TFdata)
-    Term_Frequency_Array = []
-
+    Total_Terms_in_Array = 0
+    
     for item in TFdata :
-        Term_Frequency_Array.append(item/len_of_TFdata)
+        Total_Terms_in_Array =+ item
+    Term_Frequency_Array = []
+    for item in TFdata :
+        Term_Frequency_Array.append(item/Total_Terms_in_Array)
     Term_Frequency_Matrix.append(Term_Frequency_Array)    
 
 # Create a TfidfVectorizer object
